@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import getProducts from '../data/getProducts';
+import ItemCount from './ItemCount';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null);
@@ -17,6 +18,10 @@ const ItemDetailContainer = () => {
             });
     }, [id]);
 
+    const onAdd = (quantity) => {
+        console.log(`Se agregaron ${quantity} unidades al carrito.`);
+    };
+
     return (
         <div className="item-detail-container">
             {product ? (
@@ -26,6 +31,7 @@ const ItemDetailContainer = () => {
                     <p>{product.description}</p>
                     <p>Precio: ${product.price}</p>
                     <p>Stock disponible: {product.stock}</p>
+                    <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
                 </div>
             ) : (
                 <p>Cargando producto...</p>
