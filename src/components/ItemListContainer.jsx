@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import getProducts from '../data/getProducts';
 import { useParams } from 'react-router-dom';
+import Item from './Item';
+import '../styles/components.css';
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
@@ -24,18 +26,15 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div>
             <h2>{greeting}</h2>
-            <ul>
+            <div className="item-list-container">
                 {products.length > 0 ? (
                     products.map((product) => (
-                        <li key={product.id}>
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
-                        </li>
+                        <Item key={product.id} product={product} />
                     ))
                 ) : (
                     <p>Cargando productos...</p>
                 )}
-            </ul>
+            </div>
         </div>
     );
 };
