@@ -1,0 +1,31 @@
+.navbar-custom {
+    background-color: var(--color-text);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: var(--color-background);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .navbar-brand:hover {
+    color: var(--color-accent);
+}
+
+.navbar-custom .btn-outline-success {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.navbar-custom .btn-outline-success:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.navbar-custom .cart-widget {
+    color: var(--color-background);
+}
