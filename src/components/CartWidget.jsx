@@ -1,8 +1,16 @@
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
+
 const CartWidget = () => {
+  const { getTotalItems } = useContext(CartContext);
+  const totalItems = getTotalItems();
+
   return (
-    <div className="cart-widget">
+    <Link to="/cart" className="cart-widget" style={{ display: totalItems > 0 ? 'block' : 'none' }}>
       🛒
-    </div>
+      {totalItems > 0 && <span className="item-total">{totalItems}</span>}
+    </Link>
   );
 };
 
