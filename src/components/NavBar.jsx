@@ -15,18 +15,19 @@ const NavBar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/">Inicio</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/category/suave">Suave</Link>
+            
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" to="/category/suave">Suave</Link></li>
+                <li><Link className="dropdown-item" to="/category/intenso">Intenso</Link></li>
+                <li><Link className="dropdown-item" to="/category/clasico">Clásico</Link></li>
+                <li><Link className="dropdown-item" to="/category/versatil">Versátil</Link></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/category/intenso">Intenso</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/category/clasico">Clásico</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/category/versatil">Versátil</Link>
-            </li>
+
           </ul>
         </div>
         <CartWidget />
