@@ -5,6 +5,7 @@ import Loader from './Loader';
 import { CartContext } from '../context/CartContext';
 import { db } from '../services/firebase/firebaseConfig';
 import { getDoc, doc } from 'firebase/firestore';
+import toast from 'react-hot-toast';
 import '../styles/components.css';
 
 const ItemDetailContainer = () => {
@@ -40,6 +41,7 @@ const ItemDetailContainer = () => {
         setQuantityAdded(quantity);
         if (product) {
             addItem(product, quantity);
+            toast.success(`${product.name} agregado al carrito!`);
         }
     };
 

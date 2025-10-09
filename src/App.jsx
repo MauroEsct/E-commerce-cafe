@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
@@ -9,6 +10,23 @@ function App() {
   return (
     <>
       <NavBar />
+      <Toaster 
+        position="top-right" 
+        reverseOrder={false}
+        toastOptions={{
+          success: {
+            style: {
+              background: 'var(--color-text)',
+              color: 'var(--color-background)',
+            },
+            iconTheme: {
+              primary: '#4caf50',
+              secondary: 'var(--color-background)',
+            },
+          },
+        }}
+      />
+
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a nuestra tienda!" />} />
         <Route path="/category/:id" element={<ItemListContainer greeting="Productos por categoría" />} />
