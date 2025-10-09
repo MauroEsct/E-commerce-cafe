@@ -46,13 +46,6 @@
     color: var(--color-primary);
 }
 
-
-
-
-
-
-
-
 .detail-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -141,3 +134,11 @@
     color: var(--color-text);
 }
 
+.item-card a {
+    text-decoration: none;
+}
+
+.item-card:hover .item-details h3 {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+}
